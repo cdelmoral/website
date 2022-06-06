@@ -1,40 +1,31 @@
 import React from 'react';
 import clsx from 'clsx';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
-import styles from './index.module.css';
-
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
+import styles from './styles.module.css';
 
 export default function Home(): JSX.Element {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
+    <Layout title={'Hi'} description="Welcome to my personal website, my name is Carlos del Moral.">
       <main>
-        <HomepageFeatures />
+        <div className={styles.mainContainer}>
+          <h2 className={styles.mainContainerItem}>👋 Hi, my name is</h2>
+          <h1 className={clsx(styles.mainContainerItem, 'hero__title')}>Carlos del Moral</h1>
+
+          <div className={styles.linksContainer}>
+            <div className={styles.linksContainerItem}>
+              <a href="https://linkedin.com/in/cdelmoralronda">linkedin</a>
+            </div>
+            <div className={styles.linksContainerItem}>
+              <a href="https://github.com/cdelmoral">github</a>
+            </div>
+            <div className={styles.linksContainerItem}>
+              <a href="https://flickr.com/cdelmoral">flickr</a>
+            </div>
+          </div>
+        </div>
       </main>
     </Layout>
   );

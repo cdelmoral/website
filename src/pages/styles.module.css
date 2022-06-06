@@ -1,0 +1,20 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10em;
+}
+
+.linksContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.mainContainerItem {
+  align-self: center;
+}
+
+.linksContainerItem {
+  padding: 1em;
+}
