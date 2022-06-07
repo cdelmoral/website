@@ -8,12 +8,12 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Carlos del Moral',
   url: 'https://cdelmoral.github.io',
-  baseUrl: '/',
+  baseUrl: '/website/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'cdelmoral',
-  projectName: 'cdelmoral',
+  projectName: 'website',
   deploymentBranch: 'master',
   trailingSlash: false,
   i18n: {
