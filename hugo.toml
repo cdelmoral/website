@@ -1,0 +1,49 @@
+baseURL = 'https://cdelmoral.me/'
+theme = 'risotto'
+title = 'hola! @ cdelmoral'
+author = 'Carlos del Moral'
+languageCode = 'en-us'
+copyright = '🌆 Built in Chicago © 2023'
+
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+
+sectionPagesMenu = "main"
+
+# For hugo >= 0.60.0, enable inline HTML
+[markup.goldmark.renderer]
+unsafe = true
+
+[params]
+noindex = false
+
+[params.theme]
+palette = "tokyo-night-dark"
+
+[params.about]
+title = "cdelmoral"
+description = "Full-Stack Software Engineer"
+
+[[params.socialLinks]]
+icon = "fa-brands fa-github"
+title = "GitHub"
+url = "https://github.com/cdelmoral"
+
+[[params.socialLinks]]
+icon = "fa-brands fa-linkedin"
+title = "LinkedIn"
+url = "https://linkedin.com/in/cdelmoralronda"
+
+[[params.socialLinks]]
+icon = "fa-brands fa-flickr"
+title = "flickr"
+url = "https://www.flickr.com/photos/cdelmoral/"
+
+[menu]
+
+[[menu.main]]
+identifier = "projects"
+name = "projects"
+url = "/projects/"
+weight = 10
+
