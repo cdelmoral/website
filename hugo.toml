@@ -42,8 +42,8 @@ url = "https://www.flickr.com/photos/cdelmoral/"
 [menu]
 
 [[menu.main]]
-identifier = "projects"
-name = "projects"
-url = "/projects/"
+identifier = "books"
+name = "books"
+url = "/books/"
 weight = 10
 
