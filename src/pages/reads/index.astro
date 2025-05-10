@@ -1,0 +1,35 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import { READS } from "@consts";
+import { getCollection } from "astro:content";
+
+const collection = await getCollection("reads");
+const reads = await Promise.all(
+  collection.map(async (item) => {
+    const { Content } = await item.render();
+    return { ...item, Content };
+  }),
+);
+---
+
+<PageLayout title={READS.TITLE} description={READS.DESCRIPTION}>
+  <Container>
+    <div class="space-y-10">
+      <div class="animate font-semibold text-black dark:text-white">Books</div>
+      <p>{READS.DESCRIPTION}</p>
+      <ul class="flex flex-col space-y-4">
+        {
+          reads.map((entry) => (
+            <li class="animate flex gap-x-4">
+              <div class="flex-auto max-w-full">
+                <p class="text-sm/6 font-semibold truncate">{entry.data.title}</p>
+                <p class="mt-1 truncate text-xs/5">{entry.data.author}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </Container>
+</PageLayout>

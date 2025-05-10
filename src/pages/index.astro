@@ -1,0 +1,61 @@
+---
+import Container from "@components/Container.astro";
+import PageLayout from "@layouts/PageLayout.astro";
+import Link from "@components/Link.astro";
+import { SITE, HOME, SOCIALS } from "@consts";
+---
+
+<PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
+  <Container>
+    <h4 class="animate font-semibold text-black dark:text-white">
+      Hola, I'm Carlos <span class="text-xl">👋🏻</span>
+    </h4>
+    <div class="space-y-16">
+      <section>
+        <article class="space-y-4">
+          <p class="animate">
+            I’m a Senior Software Engineer at Science Exchange, where I design, architect, and
+            maintain the cloud-based software that powers our R&D marketplace. Our platform enables
+            life sciences companies to efficiently source and manage outsourced research services,
+            streamlining a traditionally complex and fragmented process.
+          </p>
+
+          <p class="animate">
+            My work focuses on building scalable, secure, and user-friendly systems that automate
+            the full lifecycle of R&D outsourcing—from vendor discovery to contract execution and
+            payment. I’m passionate about developing tools that reduce operational friction,
+            allowing scientists and researchers to concentrate on innovation while we handle the
+            logistics behind the scenes.
+          </p>
+
+          <p class="animate">
+            When I’m not in front of the computer you can find me on the tennis courts, on stage
+            behind the drums, or just taking photos with my camera.
+          </p>
+        </article>
+      </section>
+
+      <section class="animate space-y-4">
+        <h5 class="font-semibold text-black dark:text-white">Let's Connect</h5>
+        <article>
+          <p>
+            If you want to get in touch with me about something or just to say hi, you can find me
+            on social media.
+          </p>
+        </article>
+        <ul class="flex flex-wrap gap-2">
+          {
+            SOCIALS.map((SOCIAL, index) => (
+              <li class="flex gap-x-2 text-nowrap">
+                <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}>
+                  {SOCIAL.NAME}
+                </Link>
+                {index < SOCIALS.length - 1 && "/"}
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </div>
+  </Container>
+</PageLayout>

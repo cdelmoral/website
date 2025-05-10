@@ -1,0 +1,4 @@
+---
+title: "The Next 100 Years: A Forecast for the 21st Century"
+author: "George Friedman"
+---
