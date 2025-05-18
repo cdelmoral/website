@@ -11,7 +11,7 @@ export const HOME: Metadata = {
 
 export const READS: Metadata = {
   TITLE: "Reads",
-  DESCRIPTION: "Some reading material, in no special order.",
+  DESCRIPTION: "Some reading material, in no specific order.",
 };
 
 export const WORK: Metadata = {

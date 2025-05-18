@@ -10,4 +10,14 @@ const work = defineCollection({
   }),
 });
 
-export const collections = { work };
+const reads = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    author: z.string(),
+    url: z.string().url().optional(),
+    type: z.enum(["blog", "book"]),
+  }),
+});
+
+export const collections = { work, reads };
