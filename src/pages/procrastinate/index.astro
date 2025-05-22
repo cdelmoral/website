@@ -1,0 +1,64 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import Link from "@components/Link.astro";
+import Badge from "@components/Badge.astro";
+import { READS } from "@consts";
+import { getCollection } from "astro:content";
+import { LibraryItemType, Color } from "@types";
+
+const collection = await getCollection("reads");
+const reads = await Promise.all(
+  collection.map(async (item) => {
+    const { Content } = await item.render();
+    return { ...item, Content };
+  }),
+);
+const getBadgeColor = (type: LibraryItemType): Color => {
+  switch (type) {
+    case LibraryItemType.BOOK:
+      return Color.BLUE;
+    case LibraryItemType.BLOG:
+      return Color.PURPLE;
+    case LibraryItemType.VIDEO:
+      return Color.RED;
+  }
+};
+---
+
+<PageLayout title={READS.TITLE} description={READS.DESCRIPTION}>
+  <Container>
+    <div class="space-y-10">
+      <p>
+        Procrastination, when strategically applied, can enhance creativity by allowing the
+        subconscious mind additional time to incubate ideas and form novel associations before
+        conscious execution.
+      </p>
+      <ul class="flex flex-col space-y-4">
+        {
+          reads.map((entry) => (
+            <li class="animate flex gap-x-4">
+              <div class="flex-auto max-w-full">
+                <div class="flex items-center gap-2">
+                  <p class="text-sm/6 font-semibold">
+                    {entry.data.url ? (
+                      <Link href={entry.data.url} external>
+                        {entry.data.title}
+                      </Link>
+                    ) : (
+                      <>{entry.data.title}</>
+                    )}
+                  </p>
+                </div>
+                <p class="mt-1 truncate text-xs/5">{entry.data.author}</p>
+                <p>
+                  <Badge color={getBadgeColor(entry.data.type)} label={entry.data.type} />
+                </p>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </Container>
+</PageLayout>

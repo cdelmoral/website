@@ -1,3 +1,4 @@
+import { LibraryItemType } from "@types";
 import { defineCollection, z } from "astro:content";
 
 const work = defineCollection({
@@ -16,7 +17,7 @@ const reads = defineCollection({
     title: z.string(),
     author: z.string(),
     url: z.string().url().optional(),
-    type: z.enum(["blog", "book"]),
+    type: z.nativeEnum(LibraryItemType),
   }),
 });
 

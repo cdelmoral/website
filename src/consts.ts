@@ -10,8 +10,8 @@ export const HOME: Metadata = {
 };
 
 export const READS: Metadata = {
-  TITLE: "Reads",
-  DESCRIPTION: "Some reading material, in no specific order.",
+  TITLE: "Procrastinate",
+  DESCRIPTION: "Some procrastination material, in no specific order.",
 };
 
 export const WORK: Metadata = {
