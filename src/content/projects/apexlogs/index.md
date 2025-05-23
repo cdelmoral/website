@@ -2,7 +2,7 @@
 title: "apexlogs"
 description: "Simple terminal UI for viewing Salesforce logs"
 date: "Aug 01 2024"
-repoURL: "https://github.com/markhorn-dev/astro-sphere"
+repoURL: "https://github.com/cdelmoral/apexlogs"
 ---
 
 ## Building apexlogs: A Terminal UI for Salesforce Developers
